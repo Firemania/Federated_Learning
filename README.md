@@ -21,10 +21,11 @@ In this project, a Federated Learning framework for deep learning training under
 
 In our basic FL framework, the models can be continuously updated over cycles. Here transfer learning will be used. The base model from the server in the previous round can be used to do easy training locally with less demand of data. Model update using transfer learning is often coupled with either of the two parallelisms in obtaining the global model.
 
+![The distributed AI computing FL workflow](C:\Users\Xu\Desktop\Academics\data science\DBC\Federated Learning\images\FL_workflow.png)
 
 Three architectures can be implemented: data parallelism, model parallelism, and chained distributed computing.
 
-![The distributed AI computing framework of DeepBrain Chain]()
+![The basic FL architectures for our distributed AI computing](C:\Users\Xu\Desktop\Academics\data science\DBC\Federated Learning\images\FL_architecture.png)
 
 Data parallelism is the most commonly used form of parallelism in deep learning. In data parallelism, the data during training is distributed among different nodes. In each cycle, each node trains a model on a specific set of user data, and sends the model to the server. The server will use Federated Averaging to obtain a new model. Of course, local nodes can later use this model to do Transfer Learning (TL) to fit local data, if these data has unique features against other nodes. Data parallelism can be done in synchronized or asynchronized mode, both supported in our proposed project. How the server and different nodes coordinate with each other is largely controlled by the server.  
 
